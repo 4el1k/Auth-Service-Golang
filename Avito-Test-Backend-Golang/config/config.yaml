@@ -1,0 +1,17 @@
+httpServer:
+  address: ":8081"
+  timeout: 10s
+  idleTimeout: 30s
+  readHeaderTimeout: 10s
+authJwt:
+  accessExpirationTime: 6h
+  RefreshTokenTimeToLimit: 365h
+csrfJwt:
+  accessExpirationTime: 6h
+
+database:
+  DB_NAME: agona
+  DB_PASS: admin
+  DB_HOST: localhost
+  DB_PORT: 5432
+  DB_USER: admin

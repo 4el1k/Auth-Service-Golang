@@ -1,0 +1,93 @@
+run:
+  timeout: 3m
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+  funlen:
+    lines: 100
+    statements: 55
+    ignore-comments: true
+
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment
+    settings:
+      shadow:
+        strict: true
+
+  nakedret:
+    max-func-lines: 0
+
+  nolintlint:
+    allow-no-explanation: [ funlen, lll ]
+    require-explanation: true
+    require-specific: true
+
+  perfsprint:
+    strconcat: false
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - typecheck
+    - unused
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - dupl
+    - durationcheck
+    - errname
+    - errorlint
+    - funlen
+    - gochecknoglobals
+    - goconst
+    - godot
+    - goimports
+    - gomoddirectives
+    - lll
+    - makezero
+    - nakedret
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - nonamedreturns
+    - nosprintfhostport
+    - perfsprint
+    - predeclared
+    - reassign
+    - sqlclosecheck
+    - stylecheck
+    - testableexamples
+    - testpackage
+    - unconvert
+    - unparam
+    - usestdlibvars
+    - wastedassign
+    - whitespace
+
+issues:
+  max-same-issues: 50
+
+  exclude-rules:
+    - source: "(noinspection|TODO)"
+      linters: [ godot ]
+    - path: "_test\\.go"
+      linters:
+        - bodyclose
+        - dupl
+        - funlen
+        - goconst
+        - gosec
+        - noctx
+        - wrapcheck
+        - stylecheck
+        - ineffassign
+        - govet
